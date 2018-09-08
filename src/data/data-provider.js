@@ -20,35 +20,8 @@ function getObservations(serverName, serviceName, offeringName, procedures, prop
 
   var props = [];
   for (var i = 0; i < propsNames.length; i++) {
-    var name = "";
-    var urn = "";
-
-    if (propsNames[i] === "air-rainfall") {
-      var name = "air-rainfall"; 
-      var urn = "urn:ogc:def:parameter:x-istsos:1.0:meteo:air:rainfall";
-    } else if (propsNames[i] === "air-temperature") {
-      var name = "air-temperature"; 
-      var urn = "urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature"; 
-    } else if (propsNames[i] === "air-relative-humidity") {
-      var name = "air-relative-humidity";
-      var urn = "urn:ogc:def:parameter:x-istsos:1.0:meteo:air:humidity:relative"; 
-    } else if (propsNames[i] === "air-wind-velocity") {
-      var name = "air-wind-velocity";
-      var urn = "urn:ogc:def:parameter:x-istsos:1.0:meteo:air:wind:velocity"; 
-    } else if (propsNames[i] === "river-discharge") {
-      var name = "river-discharge";
-      var urn = "urn:ogc:def:parameter:x-istsos:1.0:river:water:discharge"; 
-    } else if (propsNames[i] === "river-height") {
-      var name = "river-height";
-      var urn = "urn:ogc:def:parameter:x-istsos:1.0:river:water:height"; 
-    } else if (propsNames[i] === "soil-evapotranspiration") {
-      var name = "soil-evapotranspiration";
-      var urn = "urn:ogc:def:parameter:x-istsos:1.0:meteo:soil:evapotranspiration"; 
-    } else if (propsNames[i] === "solar-radiation") {
-      var name = "solar-radiation";
-      var urn = "urn:ogc:def:parameter:x-istsos:1.0:meteo:solar:radiation"; 
-    } 
-
+    var name = propsNames[i];
+    var urn = propsNames[i];
     var property = new istsos.ObservedProperty(service, name, urn, "", null, null);
     props.push(property);
   }
